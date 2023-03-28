@@ -18,6 +18,8 @@ class Chap1Test {
     Map<String, Play> plays = new HashMap<>();
     Invoice[] invoices = new Invoice[1];
 
+    Chap1 chap1 = new Chap1();
+
     @BeforeEach
     void init() {
 
@@ -47,7 +49,7 @@ class Chap1Test {
                 " Othello: $500.00 (40석)\n" +
                 "총액: $1,730.00\n" +
                 "적립 포인트: 47점\n";
-        String result = Chap1.statement(invoices[0], plays);
+        String result = chap1.statement(invoices[0], plays);
         assertThat(result).isEqualTo(expectedResult);
     }
 }
